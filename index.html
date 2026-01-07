@@ -71,37 +71,37 @@
         <div class="section-slate flex flex-nowrap border-b-2 shrink-0">
             <!-- Scene -->
             <div class="flex-1 min-w-0 py-1 px-1 md:py-4 md:px-8 border-r-2 border-zinc-800 flex flex-col items-center justify-center">
-                <div class="w-full flex flex-col items-center justify-center gap-2">
-                    <div class="flex items-center justify-center gap-2 md:gap-4">
+                <div class="w-full flex flex-col items-center justify-center">
+                    <div class="flex items-center justify-center gap-2 md:gap-4 mb-1">
                         <button class="huge-btn" onclick="adjust('sceneNum', -1)"><span>-</span></button>
                         <label class="landscape-label text-xs uppercase font-black tracking-[0.2em]" style="color: var(--text-label)">Scene</label>
                         <button class="huge-btn" onclick="adjust('sceneNum', 1)"><span>+</span></button>
                     </div>
-                    <label class="portrait-label text-xs md:text-2xl uppercase font-black mb-1 tracking-[0.2em]" style="color: var(--text-label)">Scene</label>
+                    <label class="portrait-label text-xs md:text-2xl uppercase font-black mb-0 tracking-[0.2em]" style="color: var(--text-label)">Scene</label>
                     <input type="number" id="sceneNum" value="1" class="num-input digital-font focus:text-red-500">
                 </div>
             </div>
             <!-- Cut -->
             <div class="flex-1 min-w-0 py-1 px-1 md:py-4 md:px-8 border-r-2 border-zinc-800 flex flex-col items-center justify-center">
-                <div class="w-full flex flex-col items-center justify-center gap-2">
-                    <div class="flex items-center justify-center gap-2 md:gap-4">
+                <div class="w-full flex flex-col items-center justify-center">
+                    <div class="flex items-center justify-center gap-2 md:gap-4 mb-1">
                         <button class="huge-btn" onclick="adjust('cutNum', -1)"><span>-</span></button>
                         <label class="landscape-label text-xs uppercase font-black tracking-[0.3em]" style="color: var(--text-label)">Cut</label>
                         <button class="huge-btn" onclick="adjust('cutNum', 1)"><span>+</span></button>
                     </div>
-                    <label class="portrait-label text-xs md:text-2xl uppercase font-black mb-1 tracking-[0.3em]" style="color: var(--text-label)">Cut</label>
+                    <label class="portrait-label text-xs md:text-2xl uppercase font-black mb-0 tracking-[0.3em]" style="color: var(--text-label)">Cut</label>
                     <input type="number" id="cutNum" value="1" class="num-input digital-font focus:text-red-500">
                 </div>
             </div>
             <!-- Take -->
             <div class="flex-1 min-w-0 py-1 px-1 md:py-4 md:px-8 border-r-2 border-zinc-800 flex flex-col items-center justify-center">
-                <div class="w-full flex flex-col items-center justify-center gap-2">
-                    <div class="flex items-center justify-center gap-2 md:gap-4">
+                <div class="w-full flex flex-col items-center justify-center">
+                    <div class="flex items-center justify-center gap-2 md:gap-4 mb-1">
                         <button class="huge-btn" onclick="adjust('takeNum', -1)"><span>-</span></button>
                         <label class="landscape-label text-xs text-red-500 uppercase font-black tracking-[0.3em]">Take</label>
                         <button class="huge-btn" onclick="adjust('takeNum', 1)"><span>+</span></button>
                     </div>
-                    <label class="portrait-label text-xs md:text-2xl text-red-500 uppercase font-black mb-1 tracking-[0.3em]">Take</label>
+                    <label class="portrait-label text-xs md:text-2xl text-red-500 uppercase font-black mb-0 tracking-[0.3em]">Take</label>
                     <input type="number" id="takeNum" value="1" class="num-input digital-font text-red-600 focus:text-red-400">
                 </div>
             </div>

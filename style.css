@@ -58,7 +58,7 @@ input[type=number] {
 /* Timecode responsive adjustments */
 .timecode-text {
     font-size: 13vw;
-    line-height: 1;
+    line-height: 0.85;
     white-space: nowrap;
 }
 @media (min-width: 1024px) {
@@ -171,7 +171,8 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
         padding: 0 !important;
     }
     .timecode-text {
-        font-size: 18vh !important;
+        font-size: 28vh !important;
+        line-height: 0.8 !important;
     }
     #dateDisplay {
         margin-top: 0 !important;

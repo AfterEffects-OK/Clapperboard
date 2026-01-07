@@ -12,6 +12,12 @@ const statusDot = document.getElementById('statusDot');
 const dateDisplay = document.getElementById('dateDisplay');
 const themeLabel = document.getElementById('themeLabel');
 
+// Inputs for persistence
+const productionInput = document.getElementById('productionInput');
+const rollInput = document.getElementById('rollInput');
+const dirInput = document.getElementById('dirInput');
+const camInput = document.getElementById('camInput');
+
 // Theme Toggle Function
 function toggleTheme() {
     isWhiteTheme = !isWhiteTheme;
@@ -58,12 +64,14 @@ function adjust(id, amount) {
     let val = parseInt(el.value) || 1;
     val = Math.max(1, val + amount);
     el.value = val;
+    saveSettings();
 }
 
 function resetCounters() {
     document.getElementById('sceneNum').value = 1;
     document.getElementById('cutNum').value = 1;
     document.getElementById('takeNum').value = 1;
+    saveSettings();
 }
 
 function toggleTimer() {
@@ -102,15 +110,70 @@ function clap() {
     initAudio();
     playBeep();
     flashOverlay.style.opacity = '1';
+    document.body.classList.add('invert-colors');
     setTimeout(() => {
         flashOverlay.style.opacity = '0';
+        document.body.classList.remove('invert-colors');
     }, 80);
 }
 
 fpsSelect.addEventListener('change', (e) => {
     fps = parseFloat(e.target.value);
+    saveSettings();
     if (isRunning) {
         toggleTimer();
         toggleTimer();
     }
 });
+
+// Local Storage Functions
+function saveSettings() {
+    const settings = {
+        production: productionInput.value,
+        roll: rollInput.value,
+        fps: fpsSelect.value,
+        scene: document.getElementById('sceneNum').value,
+        cut: document.getElementById('cutNum').value,
+        take: document.getElementById('takeNum').value,
+        dir: dirInput.value,
+        cam: camInput.value,
+        theme: isWhiteTheme
+    };
+    localStorage.setItem('clapperSettings', JSON.stringify(settings));
+}
+
+function loadSettings() {
+    const saved = localStorage.getItem('clapperSettings');
+    if (saved) {
+        try {
+            const s = JSON.parse(saved);
+            if (s.production) productionInput.value = s.production;
+            if (s.roll) rollInput.value = s.roll;
+            if (s.fps) {
+                fpsSelect.value = s.fps;
+                fps = parseFloat(s.fps);
+            }
+            if (s.scene) document.getElementById('sceneNum').value = s.scene;
+            if (s.cut) document.getElementById('cutNum').value = s.cut;
+            if (s.take) document.getElementById('takeNum').value = s.take;
+            if (s.dir) dirInput.value = s.dir;
+            if (s.cam) camInput.value = s.cam;
+            
+            // Restore theme
+            if (s.theme !== undefined && s.theme !== isWhiteTheme) {
+                toggleTheme();
+            }
+        } catch (e) {
+            console.error("Failed to load settings", e);
+        }
+    }
+}
+
+// Attach listeners for auto-save
+[productionInput, rollInput, dirInput, camInput, document.getElementById('sceneNum'), document.getElementById('cutNum'), document.getElementById('takeNum')].forEach(el => {
+    el.addEventListener('input', saveSettings);
+    el.addEventListener('change', saveSettings);
+});
+
+// Initialize
+loadSettings();

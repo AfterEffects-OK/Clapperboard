@@ -127,7 +127,7 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
     }
     .num-input {
         width: 120px !important;
-        font-size: 2rem;
+        font-size: 2rem !important;
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
@@ -179,9 +179,10 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
     /* Timecode area */
     .tc-area {
         padding: 0 !important;
+        justify-content: center !important;
     }
     .timecode-text {
-        font-size: 28vh !important;
+        font-size: 20vh !important;
         line-height: 0.8 !important;
     }
     #dateDisplay {

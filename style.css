@@ -106,8 +106,12 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
 .tc-area { background-color: var(--bg-board); }
 .tc-text { color: var(--text-main); }
 
+/* Default visibility */
+.landscape-label { display: none; }
+.portrait-label { display: block; }
+
 /* Landscape Mobile Optimizations */
-@media (max-height: 500px) and (orientation: landscape) {
+@media (max-height: 600px) and (orientation: landscape) {
     /* Hide Header to save vertical space */
     #clapperHeader {
         display: none !important;
@@ -134,7 +138,7 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
     .section-meta input[type="text"], 
     .section-meta select {
         font-size: 1.2rem !important;
-        line-height: 1.2 !important;
+        line-height: 1.0 !important;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         border-bottom-width: 2px !important;
@@ -147,12 +151,13 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
         font-size: 0.75rem !important;
         margin-bottom: 0 !important;
         letter-spacing: 0.1em !important;
+        line-height: 1.0 !important;
     }
 
     /* Reduce padding in sections */
     .section-meta {
-        padding: 0px 8px !important;
-        gap: 4px !important;
+        padding: 0 8px !important;
+        gap: 2px !important;
     }
     .section-slate {
         padding-top: 2px !important;

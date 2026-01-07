@@ -142,8 +142,9 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
     
     /* Shrink labels */
     .section-meta label,
-    .section-slate label {
-        font-size: 0.6rem !important;
+    .section-slate label,
+    .tc-area label {
+        font-size: 0.75rem !important;
         margin-bottom: 0 !important;
         letter-spacing: 0.1em !important;
     }

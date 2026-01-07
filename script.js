@@ -102,7 +102,8 @@ function updateTimer() {
     const f = Math.floor((totalSeconds % 1) * fps);
 
     const pad = (n) => n.toString().padStart(2, '0');
-    tcDisplay.innerText = `${pad(h)}:${pad(m)}:${pad(s)}:${pad(f)}`;
+    const padFrame = (n) => n.toString().padStart(fps >= 100 ? 3 : 2, '0');
+    tcDisplay.innerText = `${pad(h)}:${pad(m)}:${pad(s)}:${padFrame(f)}`;
     animationFrame = requestAnimationFrame(updateTimer);
 }
 

@@ -108,6 +108,11 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
 
 /* Landscape Mobile Optimizations */
 @media (max-height: 500px) and (orientation: landscape) {
+    /* Hide Header to save vertical space */
+    #clapperHeader {
+        display: none !important;
+    }
+
     .huge-btn {
         width: 40px !important;
         height: 40px !important;
@@ -120,7 +125,56 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
         width: 40px;
         font-size: 2rem;
     }
+    
+    /* Force compact text inputs regardless of screen width */
+    .section-meta input[type="text"], 
+    .section-meta select {
+        font-size: 1.2rem !important;
+        line-height: 1.2 !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom-width: 2px !important;
+    }
+    
+    /* Shrink labels */
+    .section-meta label,
+    .section-slate label {
+        font-size: 0.6rem !important;
+        margin-bottom: 0 !important;
+        letter-spacing: 0.1em !important;
+    }
+
+    /* Reduce padding in sections */
+    .section-meta {
+        padding: 2px 8px !important;
+        gap: 4px !important;
+    }
+    .section-slate {
+        padding-top: 2px !important;
+        padding-bottom: 2px !important;
+    }
+    .section-slate > div {
+        padding: 2px 4px !important;
+    }
+
+    /* Footer adjustments */
+    .section-footer {
+        padding: 4px 8px !important;
+    }
+    .section-footer button {
+        padding: 4px 12px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* Timecode area */
+    .tc-area {
+        padding: 0 !important;
+    }
     .timecode-text {
-        font-size: 18vh;
+        font-size: 18vh !important;
+    }
+    #dateDisplay {
+        margin-top: 0 !important;
+        font-size: 0.6rem !important;
     }
 }

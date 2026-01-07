@@ -151,7 +151,7 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
 
     /* Reduce padding in sections */
     .section-meta {
-        padding: 2px 8px !important;
+        padding: 0px 8px !important;
         gap: 4px !important;
     }
     .section-slate {
@@ -182,5 +182,13 @@ input[type="text"] { border-color: var(--input-border); color: var(--text-main);
     #dateDisplay {
         margin-top: 0 !important;
         font-size: 0.6rem !important;
+    }
+
+    /* Toggle labels for landscape mobile */
+    .landscape-label {
+        display: block !important;
+    }
+    .portrait-label {
+        display: none !important;
     }
 }

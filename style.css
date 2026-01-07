@@ -18,8 +18,8 @@ input[type=number] {
 
 /* Button design */
 .huge-btn {
-    width: 70px !important;
-    height: 70px !important;
+    width: 50px !important;
+    height: 50px !important;
     flex-shrink: 0 !important;
     display: flex !important;
     align-items: center !important;
@@ -41,7 +41,7 @@ input[type=number] {
 }
 
 .huge-btn span {
-    font-size: 3.5rem !important;
+    font-size: 2.5rem !important;
     font-weight: 900 !important;
     line-height: 0.8 !important;
 }

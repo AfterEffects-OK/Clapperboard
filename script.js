@@ -5,6 +5,9 @@ let fps = 24;
 let isWhiteTheme = false;
 
 const tcDisplay = document.getElementById('timecode');
+tcDisplay.style.fontVariantNumeric = 'tabular-nums';
+tcDisplay.style.fontFeatureSettings = '"tnum"';
+tcDisplay.style.willChange = 'contents';
 const fpsSelect = document.getElementById('fpsSelect');
 const flashOverlay = document.getElementById('flashOverlay');
 const startBtn = document.getElementById('startBtn');
@@ -103,7 +106,7 @@ function updateTimer() {
 
     const pad = (n) => n.toString().padStart(2, '0');
     const padFrame = (n) => n.toString().padStart(fps >= 100 ? 3 : 2, '0');
-    tcDisplay.innerText = `${pad(h)}:${pad(m)}:${pad(s)}:${padFrame(f)}`;
+    tcDisplay.textContent = `${pad(h)}:${pad(m)}:${pad(s)}:${padFrame(f)}`;
     animationFrame = requestAnimationFrame(updateTimer);
 }
 
